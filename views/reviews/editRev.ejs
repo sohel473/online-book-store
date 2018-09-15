@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+      <h1 style="text-align:center">Edit Review of <%= review[0].title %></h1>
+      <div style="width: 30%; margin: 20px auto;">  
+        <form action="/review/edit/<%= review[0].book_id %>/<%= review[0].user_id %>?_method=PUT" method="POST">
+          <div class="form-group">
+            <h3>User Name: <%= review[0].user_name %></h3>
+          </div>
+          <div class="form-group">
+            <textarea style="width:100%; height: 100px;" id="review" name="comment" placeholder="Type review here"><%= review[0].review_text %></textarea>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

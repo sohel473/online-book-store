@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row text-center">
+        <% publishers.forEach(function (publisher) { %>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <img class="img-responsive" src = "<%= publisher.image %>">
+                    <div class="caption">
+                        <h4><%= publisher.name %></h4>
+                    </div>
+                    <p>
+                        <a href="/publishers/<%= publisher.p_id %>" class="btn btn-primary">More Info</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

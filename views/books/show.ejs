@@ -1,0 +1,62 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 text-center">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= book[0].image %>">
+            </div>
+            <h4>ISBN: <%= book[0].ISBN %></h4>
+        </div>
+        <div class="col-md-9">
+            <div>
+                <h2><%= book[0].title %></h2>
+                <h3> by:
+                    <% for(var i = 0;i < authors.length;i++){ %>
+                        <% if(i === authors.length-1){ %>
+                            <span><a href="/authors/<%= authors[i].a_id %>"><%= authors[i].authors_name %></a></span>
+                        <% } else { %>
+                            <span><a href="/authors/<%= authors[i].a_id %>"><%= authors[i].authors_name %></a>,</span>
+                        <% } %>
+                    <% } %>
+                </h3>
+                <div>
+                    <p><%= book[0].pages %> pages</p>
+                </div>
+                <div>
+                    <p>Published <%= book[0].released_year %> by <a href="/publishers/<%=  publisher[0].p_id %>"><%= publisher[0].publishers_name %></a></p>
+                </div>
+                <h2>
+                    <strong>$ <%= book[0].price %></strong>
+                </h2>
+                <p>
+                    Genres:
+                    <% genres.forEach(function (genre){ %>
+                        <a href="/genres/<%= genre.g_id %>"><span><%= genre.genre_name %></span></a>
+                    <% }); %>
+                </p>
+            </div>
+        
+            <div class="well">
+                <div class="text-right">
+                    <a href="/review/<%= book[0].b_id %>" class="btn btn-success btn-large">Leave a review</a>
+                </div>
+                <hr>
+                <% reviews.forEach(function (review){ %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong id="userName"><%= review.user_name %></strong>
+                        <span class="pull-right"><a class="btn btn-danger btn-xs" href="/review/delete/<%= review.book_id %>/<%= review.user_id %>">DELETE</a></span>
+                        <span class="pull-right"><a class="btn btn-primary btn-xs" href="/review/edit/<%= review.book_id %>/<%= review.user_id %>">EDIT</a></span>
+                        <p>
+                            <%= review.review_text %>
+                        </p>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

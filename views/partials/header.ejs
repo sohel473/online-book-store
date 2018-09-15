@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Book Shop</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheet/main.css">
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/books"><i class="fas fa-book-open"></i> Online Book Shop</a>
+            </div>
+    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/books">Home</a></li>
+                    <li><a href="/authors">Authors</a></li>
+                    <li><a href="/publishers">Publishers</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        	<li><a href="/genres/<%= 2 %>">Fiction</a></li>
+                        	<li><a href="/genres/<%= 13 %>">Suspense</a></li>
+                        	<li><a href="/genres/<%= 10 %>">Horror</a></li>
+                        	<li><a href="/genres/<%= 16 %>">Mystery</a></li>
+                        	<li role="separator" class="divider"></li>
+                        	<li><a href="/genres/<%= 6 %>">Computer Science</a></li>
+                        	<li><a href="/genres/<%= 7 %>">Programming</a></li>
+                        	<li><a href="/genres/<%= 8 %>">Mathematics</a></li>
+                        	<li role="separator" class="divider"></li>
+                        	<li><a href="/genres">All</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" action="/search" method="GET">
+                    <div class="form-group">
+                        <input type="text" name="search" id="search-inp" class="form-control" placeholder="Title / Author / ISBN">
+                        <button class="btn btn-default" id="search-btn" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="#">Register <i class="fas fa-user-plus"></i></a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>

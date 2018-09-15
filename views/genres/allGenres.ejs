@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row text-center">
+        <% genres.forEach(function (genre) { %>
+            <div class="col-md-3 col-sm-4 col-xs-12">
+                <div class="thumbnail">
+                    <img class="img-responsive" src = "<%= genre.image %>">
+                    <div class="caption">
+                        <h4><%= genre.genre_name %></h4>
+                    </div>
+                    <p>
+                        <a href="/genres/<%= genre.g_id %>" class="btn btn-primary">Book(s)</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

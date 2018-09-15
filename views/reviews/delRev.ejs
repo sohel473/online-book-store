@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="jumbotron">
+        <h2>Are you sure want to delete this review ?</h2>
+        <form id="delete" action="/review/delete/<%= deleteRev[0].book_id %>/<%= deleteRev[0].user_id %>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">YES</button>
+        </form>
+        <span><a class="btn btn-primary" href="/books/<%= deleteRev[0].book_id %>">NO! Go Back!</a></span>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
